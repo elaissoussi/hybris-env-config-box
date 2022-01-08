@@ -1,0 +1,70 @@
+# JAVA
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_221)
+
+# MAVEN
+export MAVEN_HOME=/Users/elaissoussi/dev/tools/maven
+
+# MYSQL 
+export MYSQL_HOME=/usr/local/mysql
+
+#PATH
+export PATH=$PATH:$MAVEN_HOME/bin:$MYSQL_HOME/bin
+
+
+#export WORKSPACE_DIR=/Users/elaissoussi/dev/projets/laposte
+echo "WORKSPACE_DIR     : ${WORKSPACE_DIR}"
+
+export HYBRIS_DIR=/Users/elaissoussi/dev/projets/laposte/hybris/hybris
+echo "HYBRIS_DIR        : ${HYBRIS_DIR}"
+echo ""
+
+#------------------ PROJECT Env variables ------------------------------------"
+echo ""
+export HYBRIS_BIN_DIR="${HYBRIS_DIR}/bin"
+echo "HYBRIS_BIN_DIR    : ${HYBRIS_BIN_DIR}"
+
+export PLATFORM_HOME="${HYBRIS_BIN_DIR}/platform"
+echo "PLATFORM_HOME     : ${PLATFORM_HOME}"
+
+export HYBRIS_CONFIG_DIR="${HYBRIS_DIR}/config"
+echo "HYBRIS_CONFIG_DIR : ${HYBRIS_CONFIG_DIR}"
+
+export HYBRIS_CUSTOM_DIR="${HYBRIS_BIN_DIR}/custom"
+echo "HYBRIS_CUSTOM_DIR : ${HYBRIS_CUSTOM_DIR}"
+
+export HYBRIS_DATA_DIR="${HYBRIS_DIR}/data"
+echo "HYBRIS_DATA_DIR   : ${HYBRIS_DATA_DIR}"
+echo ""
+
+export HYBRIS_OPT_CONFIG_DIR="${HYBRIS_DIR}/roles"
+echo "HYBRIS_OPT_CONFIG_DIR  : ${HYBRIS_OPT_CONFIG_DIR}"
+echo ""
+
+
+# Git branch in prompt.
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+#export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $"
+#export PS1="%d$"
+
+
+echo "------------------------ USE JAVA 8 ---------------------------------------------"
+echo ""
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home
+echo "JAVA_HOME         : ${JAVA_HOME}"
+
+
+
+#------------------ LAPOSTE Env variables ------------------------------------"
+#echo ""
+#echo "------------------------ SYMPLIC LINKS FOR CUSTOM AND CONFIG DIR------------------------------------"
+#echo ""
+
+#ln -s ${WORKSPACE_DIR}/eboutique.custom/hybris/bin/custom ${HYBRIS_DIR}/bin/custom
+#echo "ln -s ${WORKSPACE_DIR}/workspace/eboutique.custom/hybris/bin/custom ${HYBRIS_DIR}/bin/custom"
+#ln -s ${WORKSPACE_DIR}/eboutique.custom/hybris/config ${HYBRIS_DIR}/config
+#echo "ln -s ${WORKSPACE_DIR}/eboutique.custom/hybris/config ${HYBRIS_DIR}/config"
+
